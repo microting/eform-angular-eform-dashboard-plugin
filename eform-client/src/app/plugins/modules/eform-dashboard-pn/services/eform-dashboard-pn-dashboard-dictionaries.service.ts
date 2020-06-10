@@ -8,11 +8,11 @@ import {CommonDictionaryModel, OperationDataResult} from '../../../../common/mod
 import {DashboardItemAnswerRequestModel, DashboardItemQuestionModel} from '../models';
 
 const DictionariesMethods = {
-  GetSurveys: 'api/insight-dashboard-pn/dictionary/surveys',
-  GetLocationsBySurvey: 'api/insight-dashboard-pn/dictionary/locations-by-survey',
-  GetQuestions: 'api/insight-dashboard-pn/dictionary/questions',
-  GetFilterAnswers: 'api/insight-dashboard-pn/dictionary/filter-answers',
-  GetTags: 'api/insight-dashboard-pn/dictionary/locations-tags'
+  GetSurveys: 'api/eform-dashboard-pn/dictionary/surveys',
+  GetLocationsBySurvey: 'api/eform-dashboard-pn/dictionary/locations-by-survey',
+  GetQuestions: 'api/eform-dashboard-pn/dictionary/questions',
+  GetFilterAnswers: 'api/eform-dashboard-pn/dictionary/filter-answers',
+  GetTags: 'api/eform-dashboard-pn/dictionary/locations-tags'
 };
 
 @Injectable()

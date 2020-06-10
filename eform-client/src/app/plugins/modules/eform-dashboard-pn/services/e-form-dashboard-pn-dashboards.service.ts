@@ -11,14 +11,14 @@ import {DashboardEditModel} from '../models/dashboard/dashboard-edit.model';
 import {DashboardViewExportDocModel} from '../models/dashboard/dashboard-view/dashboard-view-export-doc.model';
 
 export let DashboardMethods = {
-  Get: 'api/insight-dashboard-pn/dashboards',
-  GetForEdit: 'api/insight-dashboard-pn/dashboards/edit',
-  GetForView: 'api/insight-dashboard-pn/dashboards/view',
-  Create: 'api/insight-dashboard-pn/dashboards/create',
-  Update: 'api/insight-dashboard-pn/dashboards/update',
-  Copy: 'api/insight-dashboard-pn/dashboards/copy',
-  Delete: 'api/insight-dashboard-pn/dashboards/delete',
-  ExportDoc: 'api/insight-dashboard-pn/dashboards/export-doc',
+  Get: 'api/eform-dashboard-pn/dashboards',
+  GetForEdit: 'api/eform-dashboard-pn/dashboards/edit',
+  GetForView: 'api/eform-dashboard-pn/dashboards/view',
+  Create: 'api/eform-dashboard-pn/dashboards/create',
+  Update: 'api/eform-dashboard-pn/dashboards/update',
+  Copy: 'api/eform-dashboard-pn/dashboards/copy',
+  Delete: 'api/eform-dashboard-pn/dashboards/delete',
+  ExportDoc: 'api/eform-dashboard-pn/dashboards/export-doc',
 };
 
 @Injectable()

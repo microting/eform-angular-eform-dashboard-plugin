@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DashboardViewItemModel} from '../../../../models/dashboard/dashboard-view/dashboard-view-item.model';
-import {DashboardChartTypesEnum} from 'src/app/plugins/modules/insight-dashboard-pn/const';
+import {DashboardChartTypesEnum} from 'src/app/plugins/modules/eform-dashboard-pn/const';
 
 @Component({
   selector: 'app-dashboard-chart-data-view',

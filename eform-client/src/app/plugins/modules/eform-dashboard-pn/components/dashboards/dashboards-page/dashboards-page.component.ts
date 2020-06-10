@@ -18,7 +18,7 @@ import {CommonDictionaryExtendedModel} from '../../../models/common-dictionary-e
 
 @AutoUnsubscribe()
 @Component({
-  selector: 'app-insight-dashboard-dashboards',
+  selector: 'app-eform-dashboard-dashboards',
   templateUrl: './dashboards-page.component.html',
   styleUrls: ['./dashboards-page.component.scss']
 })
@@ -127,11 +127,11 @@ export class DashboardsPageComponent implements OnInit, OnDestroy {
   }
 
   openEditPage(dashboard: DashboardModel) {
-    this.router.navigate(['/plugins/insight-dashboard-pn/dashboard/edit/', dashboard.id]).then();
+    this.router.navigate(['/plugins/eform-dashboard-pn/dashboard/edit/', dashboard.id]).then();
   }
 
   openViewPage(dashboard: DashboardModel) {
-    this.router.navigate(['/plugins/insight-dashboard-pn/dashboard/', dashboard.id]).then();
+    this.router.navigate(['/plugins/eform-dashboard-pn/dashboard/', dashboard.id]).then();
   }
 
   openCopyModal(model: DashboardModel) {

@@ -1,4 +1,4 @@
-import {DashboardAnswerDatesModel, DashboardItemModel} from 'src/app/plugins/modules/insight-dashboard-pn/models';
+import {DashboardAnswerDatesModel, DashboardItemModel} from 'src/app/plugins/modules/eform-dashboard-pn/models';
 
 export class DashboardItemPreviewRequestModel {
   item: DashboardItemModel;

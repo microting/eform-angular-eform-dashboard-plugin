@@ -6,7 +6,7 @@ import {eformDashboardPnLocalSettings, insightDashboardPnSettings} from '../cons
 declare var require: any;
 
 @Component({
-  selector: 'app-insight-dashboard-pn-layout',
+  selector: 'app-eform-dashboard-pn-layout',
   template: '<router-outlet></router-outlet>'
 })
 export class eFormDashboardPnLayoutComponent implements  AfterViewInit, OnInit {

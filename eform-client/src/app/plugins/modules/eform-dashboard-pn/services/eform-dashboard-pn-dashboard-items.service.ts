@@ -10,8 +10,8 @@ import {DashboardViewItemModel} from '../models/dashboard/dashboard-view/dashboa
 import {DashboardItemPreviewRequestModel} from '../models/dashboard/dashboard-item/dashboard-item-preview-request.model';
 
 const DashboardItemMethods = {
-  ExportInterviews: 'api/insight-dashboard-pn/dashboard-items/export-interviews',
-  Preview: 'api/insight-dashboard-pn/dashboard-items/preview',
+  ExportInterviews: 'api/eform-dashboard-pn/dashboard-items/export-interviews',
+  Preview: 'api/eform-dashboard-pn/dashboard-items/preview',
 };
 @Injectable()
 export class eformDashboardPnDashboardItemsService extends BaseService {

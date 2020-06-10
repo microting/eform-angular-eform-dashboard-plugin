@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
 import {DashboardEditModel} from '../../../../models';
 import {DashboardFieldsEnum} from '../../../../const/enums';
 import {format, parseISO} from 'date-fns';
-import {LabelValueExtendedModel} from 'src/app/plugins/modules/insight-dashboard-pn/models/label-value-extended.model';
+import {LabelValueExtendedModel} from 'src/app/plugins/modules/eform-dashboard-pn/models/label-value-extended.model';
 
 @Component({
   selector: 'app-dashboard-edit-header',

@@ -13,7 +13,7 @@ import {eformDashboardPnDashboardDictionariesService, eformDashboardPnDashboardI
 import {TranslateService} from '@ngx-translate/core';
 import {eformDashboardPnCollapseService} from '../../../../services/eform-dashboard-pn-collapse.service';
 import {CollapseComponent} from 'angular-bootstrap-md';
-import {LabelValueExtendedModel} from 'src/app/plugins/modules/insight-dashboard-pn/models/label-value-extended.model';
+import {LabelValueExtendedModel} from 'src/app/plugins/modules/eform-dashboard-pn/models/label-value-extended.model';
 import {DashboardChartDataModel} from '../../../../models/dashboard/dashboard-chart-data.model';
 
 @AutoUnsubscribe()

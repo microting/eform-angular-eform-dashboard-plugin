@@ -7,8 +7,8 @@ import {
   lineSmiley, multi,
   multiSmiley, multiStacked, multiStackedSmiley, single, singleSmiley
 } from './chart-data';
-import {DashboardChartDataModel} from 'src/app/plugins/modules/insight-dashboard-pn/models/dashboard/dashboard-chart-data.model';
-import {getChartData} from 'src/app/plugins/modules/insight-dashboard-pn/helpers/preview-values-generator.helper';
+import {DashboardChartDataModel} from 'src/app/plugins/modules/eform-dashboard-pn/models/dashboard/dashboard-chart-data.model';
+import {getChartData} from 'src/app/plugins/modules/eform-dashboard-pn/helpers/preview-values-generator.helper';
 
 @Component({
   selector: 'app-dashboard-chart-edit',

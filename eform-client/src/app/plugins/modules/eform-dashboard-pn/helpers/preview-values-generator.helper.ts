@@ -22,7 +22,7 @@ import {
 import {
   stackedGroupedSmileyDataByMonth, stackedGroupedSmileyDataByQuarter, stackedGroupedSmileyDataBySixMonth,
   stackedGroupedSmileyDataByWeek, stackedGroupedSmileyDataByYear
-} from 'src/app/plugins/modules/insight-dashboard-pn/const/chart-data/chart-data-stacked-grouped';
+} from 'src/app/plugins/modules/eform-dashboard-pn/const/chart-data/chart-data-stacked-grouped';
 
 export function getChartData(questionType: DashboardItemQuestionTypesEnum,
                              period: DashboardPeriodUnitsEnum, chartType: DashboardChartTypesEnum) {
@@ -86,7 +86,7 @@ function getChartDataByQuarter(chartType: DashboardChartTypesEnum, questionType:
     case DashboardChartTypesEnum.HorizontalBarStackedGrouped:
       return stackedGroupedSmileyDataByQuarter;
   }
-} 
+}
 
 function getChartDataBySixMonth(chartType: DashboardChartTypesEnum, questionType: DashboardItemQuestionTypesEnum) {
   switch (chartType) {

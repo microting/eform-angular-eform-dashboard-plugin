@@ -8,7 +8,7 @@ import {OperationDataResult, OperationResult} from '../../../../common/models';
 import {eformDashboardBaseSettingsModel} from '../models';
 
 export const eformDashboardSettingsMethods = {
-  Settings: 'api/insight-dashboard-pn/settings'
+  Settings: 'api/eform-dashboard-pn/settings'
 };
 
 @Injectable()
