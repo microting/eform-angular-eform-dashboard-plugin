@@ -1,9 +1,9 @@
 import {expect} from 'chai';
 import loginPage from '../../../Page objects/Login.page';
-import insightDashboardPage from '../../../Page objects/eformDashboard/eformDashboard.page';
+import insightDashboardPage from '../../../Page objects/eFormDashboard/eformDashboard.page';
 import dashboardsPage, {
   dashboardName,
-} from '../../../Page objects/eformDashboard/eformDashboard-Dashboards.page';
+} from '../../../Page objects/eFormDashboard/eformDashboard-Dashboards.page';
 
 describe('eForm Dashboard - Dashboards - Add', function () {
   before(function () {

@@ -1,10 +1,10 @@
 import {expect} from 'chai';
 import loginPage from '../../../../Page objects/Login.page';
-import insightDashboardPage from '../../../../Page objects/eformDashboard/eformDashboard.page';
-import dashboardsPage from '../../../../Page objects/eformDashboard/eformDashboard-Dashboards.page';
-import dashboardsViewPage from '../../../../Page objects/eformDashboard/eformDashboard-DashboardView.page';
-import dashboardEditPage, {DashboardTestConfigEditModel} from '../../../../Page objects/eformDashboard/eformDashboard-DashboardEdit.page';
-import {dashboardTotalDataJson, dashboardTotalItems} from '../../../../Page objects/eformDashboard/ChartData/DashboardTotal.data';
+import insightDashboardPage from '../../../../Page objects/eFormDashboard/eformDashboard.page';
+import dashboardsPage from '../../../../Page objects/eFormDashboard/eformDashboard-Dashboards.page';
+import dashboardsViewPage from '../../../../Page objects/eFormDashboard/eformDashboard-DashboardView.page';
+import dashboardEditPage, {DashboardTestConfigEditModel} from '../../../../Page objects/eFormDashboard/eformDashboard-DashboardEdit.page';
+import {dashboardTotalDataJson, dashboardTotalItems} from '../../../../Page objects/eFormDashboard/ChartData/DashboardTotal.data';
 
 const dashboardConfig: DashboardTestConfigEditModel = {
   locationTagName: 'Location 1',

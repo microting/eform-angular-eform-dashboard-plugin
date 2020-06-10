@@ -1,12 +1,12 @@
 import {expect} from 'chai';
 import loginPage from '../../../Page objects/Login.page';
-import insightDashboardPage from '../../../Page objects/eformDashboard/eformDashboard.page';
-import dashboardsPage from '../../../Page objects/eformDashboard/eformDashboard-Dashboards.page';
+import insightDashboardPage from '../../../Page objects/eFormDashboard/eformDashboard.page';
+import dashboardsPage from '../../../Page objects/eFormDashboard/eformDashboard-Dashboards.page';
 import dashboardEditPage, {
   DashboardTestConfigEditModel,
   DashboardTestItemEditModel
-} from '../../../Page objects/eformDashboard/eformDashboard-DashboardEdit.page';
-import dashboardsViewPage from '../../../Page objects/eformDashboard/eformDashboard-DashboardView.page';
+} from '../../../Page objects/eFormDashboard/eformDashboard-DashboardEdit.page';
+import dashboardsViewPage from '../../../Page objects/eFormDashboard/eformDashboard-DashboardView.page';
 
 const dashboardConfig: DashboardTestConfigEditModel = {
   locationTagName: 'Location 1',
