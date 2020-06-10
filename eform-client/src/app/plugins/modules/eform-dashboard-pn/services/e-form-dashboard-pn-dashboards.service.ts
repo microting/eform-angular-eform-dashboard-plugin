@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {Observable} from 'rxjs';
 import {OperationDataResult, OperationResult} from '../../../../common/models';
-import {DashboardCreateModel, DashboardsListModel, DashboardViewModel, SurveyConfigsListModel} from '../models';
+import {DashboardCreateModel, DashboardsListModel, DashboardViewModel} from '../models';
 import {DashboardsRequestModel} from '../models/dashboard/dashboards-request.model';
 import {DashboardEditModel} from '../models/dashboard/dashboard-edit.model';
 import {DashboardViewExportDocModel} from '../models/dashboard/dashboard-view/dashboard-view-export-doc.model';
@@ -20,8 +20,10 @@ export let DashboardMethods = {
   Delete: 'api/insight-dashboard-pn/dashboards/delete',
   ExportDoc: 'api/insight-dashboard-pn/dashboards/export-doc',
 };
+
 @Injectable()
-export class eformDashboardPnDashboardsService extends BaseService {
+// tslint:disable-next-line:class-name
+export class eFormDashboardPnDashboardsService extends BaseService {
   constructor(private _http: HttpClient, router: Router, toastrService: ToastrService) {
     super(_http, router, toastrService);
   }

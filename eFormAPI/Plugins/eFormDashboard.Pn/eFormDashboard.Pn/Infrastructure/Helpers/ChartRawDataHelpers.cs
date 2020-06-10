@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.Linq;
 using eFormDashboard.Pn.Infrastructure.Models.Dashboards;
 using eFormDashboard.Pn.Infrastructure.Models.Dashboards.RawData;
-using eFormDashboard.Pn.Services.Common.InsightDashboardLocalizationService;
+using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
 
 namespace eFormDashboard.Pn.Infrastructure.Helpers
 {

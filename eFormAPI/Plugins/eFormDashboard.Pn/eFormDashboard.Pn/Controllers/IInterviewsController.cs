@@ -50,7 +50,7 @@ namespace eFormDashboard.Pn.Controllers
         /// <returns code="200">Return excel blob</returns>
         /// <returns code="400">Error message</returns>
         [HttpGet]
-        [Route("api/insight-dashboard-pn/dashboard-items/export-interviews")]
+        [Route("api/eform-dashboard-pn/dashboard-items/export-interviews")]
         [ProducesResponseType(typeof(string), 400)]
         public async Task GenerateReportFile(DashboardItemExportRequestModel requestModel)
         {

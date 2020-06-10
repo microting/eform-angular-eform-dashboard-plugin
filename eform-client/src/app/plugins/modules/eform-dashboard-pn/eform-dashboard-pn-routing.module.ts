@@ -1,20 +1,19 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {eformDashboardPnLayoutComponent} from './layouts';
+import {eFormDashboardPnLayoutComponent} from './layouts';
 import {AdminGuard, AuthGuard, PermissionGuard} from '../../../common/guards';
 import {
   DashboardEditComponent,
   DashboardsPageComponent,
   DashboardViewComponent,
-  eformDashboardSettingsComponent,
-  SurveyConfigurationsPageComponent
+  eFormDashboardSettingsComponent,
 } from './components';
 import {eformDashboardPnClaims} from './const';
 
 export const routes: Routes = [
   {
     path: '',
-    component: eformDashboardPnLayoutComponent,
+    component: eFormDashboardPnLayoutComponent,
     // canActivate: [PermissionGuard],
     // data: {requiredPermission: eformDashboardPnClaims.accesseformDashboardPlugin},
     children: [
@@ -34,14 +33,9 @@ export const routes: Routes = [
         component: DashboardEditComponent
       },
       {
-        path: 'surveys-configs',
-        canActivate: [AuthGuard],
-        component: SurveyConfigurationsPageComponent
-      },
-      {
         path: 'settings',
         canActivate: [AdminGuard],
-        component: eformDashboardSettingsComponent
+        component: eFormDashboardSettingsComponent
       }
     ]
   }
@@ -51,5 +45,5 @@ export const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class eformDashboardPnRoutingModule {
+export class eFormDashboardPnRoutingModule {
 }

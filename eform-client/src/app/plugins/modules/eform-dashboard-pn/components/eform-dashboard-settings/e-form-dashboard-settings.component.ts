@@ -4,10 +4,11 @@ import {eformDashboardBaseSettingsModel} from '../../models';
 
 @Component({
   selector: 'app-eform-dashboard-settings',
-  templateUrl: './eform-dashboard-settings.component.html',
-  styleUrls: ['./eform-dashboard-settings.component.scss']
+  templateUrl: './e-form-dashboard-settings.component.html',
+  styleUrls: ['./e-form-dashboard-settings.component.scss']
 })
-export class eformDashboardSettingsComponent implements OnInit {
+// tslint:disable-next-line:class-name
+export class eFormDashboardSettingsComponent implements OnInit {
   settingsModel: eformDashboardBaseSettingsModel = new eformDashboardBaseSettingsModel();
 
   constructor(private insightDashboardPnSettingsService: eformDashboardPnSettingsService) {

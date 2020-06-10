@@ -7,16 +7,15 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {SharedPnModule} from '../shared/shared-pn.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {EformSharedModule} from '../../../common/modules/eform-shared/eform-shared.module';
-import {eformDashboardPnLayoutComponent} from './layouts';
+import {eFormDashboardPnLayoutComponent} from './layouts';
 
-import {eformDashboardPnRoutingModule} from './eform-dashboard-pn-routing.module';
+import {eFormDashboardPnRoutingModule} from './eform-dashboard-pn-routing.module';
 import {CasesModule} from '../../../modules';
 import {
   eformDashboardPnDashboardDictionariesService,
   eformDashboardPnDashboardItemsService,
-  eformDashboardPnDashboardsService,
+  eFormDashboardPnDashboardsService,
   eformDashboardPnSettingsService,
-  eformDashboardPnSurveyConfigsService
 } from './services';
 import {
   DashboardBlockViewComponent,
@@ -34,12 +33,7 @@ import {
   DashboardNewComponent,
   DashboardsPageComponent,
   DashboardViewComponent,
-  eformDashboardSettingsComponent,
-  SurveyConfigurationDeleteComponent,
-  SurveyConfigurationEditComponent,
-  SurveyConfigurationNewComponent,
-  SurveyConfigurationsPageComponent,
-  SurveyConfigurationStatusComponent
+  eFormDashboardSettingsComponent,
 } from './components';
 import {DragulaModule} from 'ng2-dragula';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
@@ -50,7 +44,7 @@ import {OwlDateTimeModule} from 'ng-pick-datetime-ex';
     CommonModule,
     SharedPnModule,
     MDBBootstrapModule,
-    eformDashboardPnRoutingModule,
+    eFormDashboardPnRoutingModule,
     TranslateModule,
     FormsModule,
     NgSelectModule,
@@ -63,17 +57,12 @@ import {OwlDateTimeModule} from 'ng-pick-datetime-ex';
     OwlDateTimeModule
   ],
   declarations: [
-    eformDashboardPnLayoutComponent,
-    eformDashboardSettingsComponent,
-    SurveyConfigurationsPageComponent,
+    eFormDashboardPnLayoutComponent,
+    eFormDashboardSettingsComponent,
     DashboardsPageComponent,
     DashboardNewComponent,
-    SurveyConfigurationNewComponent,
-    SurveyConfigurationEditComponent,
     DashboardEditComponent,
     DashboardViewComponent,
-    SurveyConfigurationStatusComponent,
-    SurveyConfigurationDeleteComponent,
     DashboardDeleteComponent,
     DashboardCopyComponent,
     DashboardItemEditComponent,
@@ -86,9 +75,9 @@ import {OwlDateTimeModule} from 'ng-pick-datetime-ex';
     DashboardChartDataViewComponent,
     DashboardInterviewsViewComponent
   ],
-  providers: [eformDashboardPnSettingsService, eformDashboardPnDashboardsService,
-    eformDashboardPnSurveyConfigsService, eformDashboardPnDashboardDictionariesService, eformDashboardPnDashboardItemsService]
+  providers: [eformDashboardPnSettingsService, eFormDashboardPnDashboardsService,
+    eformDashboardPnDashboardDictionariesService, eformDashboardPnDashboardItemsService]
 })
 
-export class eformDashboardPnModule {
+export class eFormDashboardPnModule {
 }

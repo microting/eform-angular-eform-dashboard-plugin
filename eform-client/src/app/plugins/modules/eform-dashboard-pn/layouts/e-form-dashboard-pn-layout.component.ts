@@ -9,7 +9,7 @@ declare var require: any;
   selector: 'app-insight-dashboard-pn-layout',
   template: '<router-outlet></router-outlet>'
 })
-export class eformDashboardPnLayoutComponent implements  AfterViewInit, OnInit {
+export class eFormDashboardPnLayoutComponent implements  AfterViewInit, OnInit {
   constructor(private localeService: LocaleService,
               private translateService: TranslateService,
               private sharedPnService: SharedPnService) {

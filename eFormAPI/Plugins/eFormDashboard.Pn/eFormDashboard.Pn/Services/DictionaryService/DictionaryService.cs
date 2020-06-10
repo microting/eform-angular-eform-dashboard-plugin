@@ -30,7 +30,7 @@ SOFTWARE.
  using eFormDashboard.Pn.Infrastructure.Helpers;
  using eFormDashboard.Pn.Infrastructure.Models;
  using eFormDashboard.Pn.Infrastructure.Models.Dashboards;
- using eFormDashboard.Pn.Services.Common.InsightDashboardLocalizationService;
+ using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
  using Microsoft.EntityFrameworkCore;
  using Microsoft.Extensions.Logging;
  using Microting.eForm.Infrastructure.Constants;

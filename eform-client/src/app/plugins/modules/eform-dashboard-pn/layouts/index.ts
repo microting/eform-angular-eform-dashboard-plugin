@@ -1,1 +1,1 @@
-export * from './eform-dashboard-pn-layout.component';
+export * from './e-form-dashboard-pn-layout.component';

@@ -30,7 +30,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using eFormDashboard.Pn.Services.Common.InsightDashboardLocalizationService;
+using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
 using eFormDashboard.Pn.Services.DashboardService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -69,7 +69,7 @@ namespace eFormDashboard.Pn.Services.WordService
                 var dashboardView = reportDataResult.Model;
 
                 // Read html and template
-                var resourceString = "InsightDashboard.Pn.Resources.Templates.WordExport.page.html";
+                var resourceString = "eFormDashboard.Pn.Resources.Templates.WordExport.page.html";
                 var assembly = Assembly.GetExecutingAssembly();
                 var resourceStream = assembly.GetManifestResourceStream(resourceString);
                 string html;
@@ -78,7 +78,7 @@ namespace eFormDashboard.Pn.Services.WordService
                     html = reader.ReadToEnd();
                 }
 
-                resourceString = "InsightDashboard.Pn.Resources.Templates.WordExport.file.docx";
+                resourceString = "eFormDashboard.Pn.Resources.Templates.WordExport.file.docx";
                 var docxFileResourceStream = assembly.GetManifestResourceStream(resourceString);
                 if (docxFileResourceStream == null)
                 {

@@ -22,14 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-using System.Threading.Tasks;
-using Microting.eFormApi.BasePn.Infrastructure.Models.API;
+using Microsoft.Extensions.Localization;
+using Microting.eFormApi.BasePn.Localization.Abstractions;
 
-namespace eFormDashboard.Pn.Services.Common.InsightDashboardPnSettingsService
+namespace eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService
 {
-    public interface IInsightDashboardPnSettingsService
+    public class EFormDashboardLocalizationService : IeFormDashboardLocalizationService
     {
-        // Task<OperationDataResult<InsightDashboardBaseSettings>> GetSettings();
-        // Task<OperationResult> UpdateSettings(InsightDashboardBaseSettings baseSettings);
+        private readonly IStringLocalizer _localizer;
+        
+        // ReSharper disable once SuggestBaseTypeForParameter
+        public EFormDashboardLocalizationService(IEformLocalizerFactory factory)
+        {
+            _localizer = factory.Create(typeof(EformDashboardPlugin));
+        }
+        
+        public string GetString(string key)
+        {
+            var str = _localizer[key];
+            return str.Value;
+        }
+
+        public string GetString(string format, params object[] args)
+        {
+            var message = _localizer[format];
+
+            return message?.Value == null ? null : string.Format(message.Value, args);
+        }
     }
 }

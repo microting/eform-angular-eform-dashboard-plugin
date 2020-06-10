@@ -29,7 +29,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using eFormDashboard.Pn.Infrastructure.Models.Dashboards.Export;
-using eFormDashboard.Pn.Services.Common.InsightDashboardLocalizationService;
+using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
 using eFormDashboard.Pn.Services.DashboardService;
 using eFormDashboard.Pn.Services.InterviewsExcelService;
 using Microsoft.Extensions.Logging;

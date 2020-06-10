@@ -33,17 +33,17 @@ namespace eFormDashboard.Pn.Infrastructure.Data.Seed.Data
         {
             new PluginConfigurationValue()
             {
-                Name = "InsightDashboardBaseSettings:MaxNumberOfWorkers",
+                Name = "eFormDashboardBaseSettings:MaxNumberOfWorkers",
                 Value = "4"
             },
             new PluginConfigurationValue()
             {
-                Name = "InsightDashboardBaseSettings:MaxParallelism",
+                Name = "eFormDashboardBaseSettings:MaxParallelism",
                 Value = "25000"
             },
             new PluginConfigurationValue()
             {
-                Name = "InsightDashboardBaseSettings:SdkConnectionString",
+                Name = "eFormDashboardBaseSettings:SdkConnectionString",
                 Value = "..."
             }
         };

@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 using System.Threading.Tasks;
-using eFormDashboard.Pn.Services.Common.InsightDashboardPnSettingsService;
+using eFormDashboard.Pn.Services.Common.eFormDashboardPnSettingsService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microting.eFormApi.BasePn.Infrastructure.Database.Entities;
@@ -31,29 +31,29 @@ using Microting.eFormApi.BasePn.Infrastructure.Models.API;
 
 namespace eFormDashboard.Pn.Controllers
 {
-    public class InsightDashboardSettingsController : Controller
+    public class eFormDashboardSettingsController : Controller
     {
-        private readonly IInsightDashboardPnSettingsService _insightDashboardPnSettingsService;
+        private readonly IeFormDashboardPnSettingsService _eformDashboardPnSettingsService;
 
-        public InsightDashboardSettingsController(IInsightDashboardPnSettingsService insightDashboardPnSettingsService)
+        public eFormDashboardSettingsController(IeFormDashboardPnSettingsService eformDashboardPnSettingsService)
         {
-            _insightDashboardPnSettingsService = insightDashboardPnSettingsService;
+            _eformDashboardPnSettingsService = eformDashboardPnSettingsService;
         }
 
         // [HttpGet]
         // [Authorize(Roles = EformRole.Admin)]
-        // [Route("api/insight-dashboard-pn/settings")]
-        // public async Task<OperationDataResult<InsightDashboardBaseSettings>> GetSettings()
+        // [Route("api/eform-dashboard-pn/settings")]
+        // public async Task<OperationDataResult<eFormDashboardBaseSettings>> GetSettings()
         // {
-        //     return await _insightDashboardPnSettingsService.GetSettings();
+        //     return await _eformDashboardPnSettingsService.GetSettings();
         // }
         //
         // [HttpPost]
         // [Authorize(Roles = EformRole.Admin)]
-        // [Route("api/insight-dashboard-pn/settings")]
-        // public async Task<OperationResult> UpdateSettings([FromBody] InsightDashboardBaseSettings baseSettings)
+        // [Route("api/eform-dashboard-pn/settings")]
+        // public async Task<OperationResult> UpdateSettings([FromBody] eFormDashboardBaseSettings baseSettings)
         // {
-        //     return await _insightDashboardPnSettingsService.UpdateSettings(baseSettings);
+        //     return await _eformDashboardPnSettingsService.UpdateSettings(baseSettings);
         // }
 
         

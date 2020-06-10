@@ -28,7 +28,7 @@ using System.Reflection;
 using eFormDashboard.Pn.Infrastructure.Constants;
 using eFormDashboard.Pn.Infrastructure.Data.Seed;
 using eFormDashboard.Pn.Infrastructure.Data.Seed.Data;
-using eFormDashboard.Pn.Services.Common.InsightDashboardLocalizationService;
+using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
 using eFormDashboard.Pn.Services.DashboardService;
 using eFormDashboard.Pn.Services.DictionaryService;
 using Microsoft.AspNetCore.Builder;
@@ -47,10 +47,10 @@ namespace eFormDashboard.Pn
 {
     public class EformDashboardPlugin : IEformPlugin
     {
-        public string Name => "Microting InSight Dashboard Plugin";
-        public string PluginId => "eform-angular-insight-dashboard-plugin";
+        public string Name => "Microting eForm Dashboard Plugin";
+        public string PluginId => "eform-angular-eform-dashboard-plugin";
         public string PluginPath => PluginAssembly().Location;
-        public string PluginBaseUrl => "insight-dashboard-pn";
+        public string PluginBaseUrl => "eform-dashboard-pn";
 
         public Assembly PluginAssembly()
         {
@@ -64,7 +64,7 @@ namespace eFormDashboard.Pn
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IeFormDashboardLocalizationService, eFormDashboardLocalizationService>();
+            services.AddSingleton<IeFormDashboardLocalizationService, EFormDashboardLocalizationService>();
             services.AddScoped<IDashboardService, DashboardService>();
             services.AddScoped<IDictionaryService, DictionaryService>();
         }
@@ -113,16 +113,9 @@ namespace eFormDashboard.Pn
                 {
                     new MenuItemModel()
                     {
-                        Name = localizationService.GetString("SurveysConfigs"),
-                        E2EId = "insight-dashboard-pn-surveys-configs",
-                        Link = "/plugins/insight-dashboard-pn/surveys-configs",
-                        Position = 0
-                    },
-                    new MenuItemModel()
-                    {
                         Name = localizationService.GetString("Dashboards"),
-                        E2EId = "insight-dashboard-pn-dashboards",
-                        Link = "/plugins/insight-dashboard-pn/dashboards",
+                        E2EId = "eform-dashboard-pn-dashboards",
+                        Link = "/plugins/eform-dashboard-pn/dashboards",
                         Position = 1
                     },
                 }

@@ -22,32 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-using System;
-using System.Diagnostics;
 using System.Security.Claims;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using eFormDashboard.Pn.Services.Common.InsightDashboardLocalizationService;
+using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Microting.eFormApi.BasePn.Infrastructure.Helpers.PluginDbOptions;
-using Microting.eFormApi.BasePn.Infrastructure.Models.API;
 using Microting.eFormDashboardBase.Infrastructure.Data;
 
-namespace eFormDashboard.Pn.Services.Common.InsightDashboardPnSettingsService
+namespace eFormDashboard.Pn.Services.Common.eFormDashboardPnSettingsService
 {
-    public class InsightDashboardPnSettingsService : IInsightDashboardPnSettingsService
+    public class eFormDashboardPnSettingsService : IeFormDashboardPnSettingsService
     {
-        private readonly ILogger<InsightDashboardPnSettingsService> _logger;
+        private readonly ILogger<eFormDashboardPnSettingsService> _logger;
         private readonly IeFormDashboardLocalizationService _localizationService;
         private readonly eFormDashboardPnDbContext _dbContext;
-        // private readonly IPluginDbOptions<InsightDashboardBaseSettings> _options;
+        // private readonly IPluginDbOptions<eFormDashboardBaseSettings> _options;
         private readonly IHttpContextAccessor _httpContextAccessor;
         
-        public InsightDashboardPnSettingsService(ILogger<InsightDashboardPnSettingsService> logger,
+        public eFormDashboardPnSettingsService(ILogger<eFormDashboardPnSettingsService> logger,
             IeFormDashboardLocalizationService localizationService,
             eFormDashboardPnDbContext dbContext,
-            // IPluginDbOptions<InsightDashboardBaseSettings> options,
+            // IPluginDbOptions<eFormDashboardBaseSettings> options,
             IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
@@ -57,7 +51,7 @@ namespace eFormDashboard.Pn.Services.Common.InsightDashboardPnSettingsService
             _localizationService = localizationService;
         }
         
-        // public async Task<OperationDataResult<InsightDashboardBaseSettings>> GetSettings()
+        // public async Task<OperationDataResult<eFormDashboardBaseSettings>> GetSettings()
         // {
         //     try
         //     {
@@ -74,18 +68,18 @@ namespace eFormDashboard.Pn.Services.Common.InsightDashboardPnSettingsService
         //             await _options.UpdateDb(settings => { settings.SdkConnectionString = connectionString;}, _dbContext, UserId);
         //         }
         //
-        //         return new OperationDataResult<InsightDashboardBaseSettings>(true, option);
+        //         return new OperationDataResult<eFormDashboardBaseSettings>(true, option);
         //     }
         //     catch(Exception e)
         //     {
         //         Trace.TraceError(e.Message);
         //         _logger.LogError(e.Message);
-        //         return new OperationDataResult<InsightDashboardBaseSettings>(false,
+        //         return new OperationDataResult<eFormDashboardBaseSettings>(false,
         //             _localizationService.GetString("ErrorWhileObtainingDashboardSettings"));
         //     }
         // }
         //
-        // public async Task<OperationResult> UpdateSettings(InsightDashboardBaseSettings baseSettings)
+        // public async Task<OperationResult> UpdateSettings(eFormDashboardBaseSettings baseSettings)
         // {
         //     try
         //     {

@@ -27,13 +27,13 @@ using Microting.eFormApi.BasePn.Infrastructure.Database.Entities;
 
 namespace eFormDashboard.Pn.Infrastructure.Data.Seed.Data
 {
-    public static class InsightDashboardPermissionsSeedData
+    public static class eFormDashboardPermissionsSeedData
     {
         public static PluginPermission[] Data => new []
         {
             new PluginPermission()
             {
-                PermissionName = "Access Insight Dashboard Plugin",
+                PermissionName = "Access eForm Dashboard Plugin",
                 ClaimName = eFormDashboardClaims.AccesseFormDashboardPlugin,
             },
         };

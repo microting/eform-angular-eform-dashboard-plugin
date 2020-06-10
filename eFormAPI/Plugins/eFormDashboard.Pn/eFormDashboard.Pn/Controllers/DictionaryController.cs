@@ -45,35 +45,35 @@ namespace eFormDashboard.Pn.Controllers
         }
 
         [HttpGet]
-        [Route("api/insight-dashboard-pn/dictionary/surveys")]
+        [Route("api/eform-dashboard-pn/dictionary/surveys")]
         public async Task<OperationDataResult<List<CommonDictionaryModel>>> GetSurveys()
         {
             return await _dictionaryService.GetSurveys();
         }
 
         [HttpGet]
-        [Route("api/insight-dashboard-pn/dictionary/locations-tags")]
+        [Route("api/eform-dashboard-pn/dictionary/locations-tags")]
         public async Task<OperationDataResult<List<CommonDictionaryModel>>> GetTags()
         {
             return await _dictionaryService.GetTags();
         }
 
         [HttpGet]
-        [Route("api/insight-dashboard-pn/dictionary/locations-by-survey/{id}")]
+        [Route("api/eform-dashboard-pn/dictionary/locations-by-survey/{id}")]
         public async Task<OperationDataResult<List<CommonDictionaryModel>>> GetLocationsByeFormId(int id)
         {
             return await _dictionaryService.GetLocationsByeFormId(id);
         }
 
         // [HttpGet]
-        // [Route("api/insight-dashboard-pn/dictionary/questions/{surveyId}")]
+        // [Route("api/eform-dashboard-pn/dictionary/questions/{surveyId}")]
         // public async Task<OperationDataResult<List<QuestionDictionaryModel>>> GetQuestions(int surveyId)
         // {
         //     return await _dictionaryService.GetQuestions(surveyId);
         // }
 
         [HttpGet]
-        [Route("api/insight-dashboard-pn/dictionary/filter-answers")]
+        [Route("api/eform-dashboard-pn/dictionary/filter-answers")]
         public async Task<OperationDataResult<List<CommonDictionaryModel>>> GetFilterAnswers(DashboardItemAnswerRequestModel requestModel)
         {
             return await _dictionaryService.GetFilterAnswers(requestModel);

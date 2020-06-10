@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {CommonDictionaryModel} from '../../../../../../common/models/common';
-import {eformDashboardPnDashboardsService} from '../../../services';
+import {eFormDashboardPnDashboardsService} from '../../../services';
 import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
 import {Subscription} from 'rxjs';
 import {CommonDictionaryExtendedModel} from '../../../models/common-dictionary-extended.model';
@@ -21,7 +21,7 @@ export class DashboardNewComponent implements OnInit, OnDestroy {
   dashboardName: string;
 
 
-  constructor(private dashboardsService: eformDashboardPnDashboardsService) {
+  constructor(private dashboardsService: eFormDashboardPnDashboardsService) {
   }
 
   show() {

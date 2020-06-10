@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {eformDashboardPnDashboardsService} from '../../../../services';
+import {eFormDashboardPnDashboardsService} from '../../../../services';
 import {DashboardModel} from '../../../../models';
 
 @Component({
@@ -12,7 +12,7 @@ export class DashboardCopyComponent implements OnInit {
   @Output() dashboardCopied: EventEmitter<void> = new EventEmitter<void>()
   dashboard: DashboardModel = new DashboardModel();
 
-  constructor(private dashboardService: eformDashboardPnDashboardsService) { }
+  constructor(private dashboardService: eFormDashboardPnDashboardsService) { }
 
   show(model: DashboardModel) {
     this.dashboard = model;

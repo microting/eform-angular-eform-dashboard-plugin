@@ -54,7 +54,7 @@ namespace eFormDashboard.Pn.Infrastructure.Data.Seed
             }
 
             // Seed plugin permissions
-            var newPermissions = InsightDashboardPermissionsSeedData.Data
+            var newPermissions = eFormDashboardPermissionsSeedData.Data
                 .Where(p => dbContext.PluginPermissions.All(x => x.ClaimName != p.ClaimName))
                 .Select(p => new PluginPermission
                     {

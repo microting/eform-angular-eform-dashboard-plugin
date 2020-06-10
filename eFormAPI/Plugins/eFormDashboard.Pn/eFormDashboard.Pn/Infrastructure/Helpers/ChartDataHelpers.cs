@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eFormDashboard.Pn.Infrastructure.Models.Dashboards;
-using eFormDashboard.Pn.Services.Common.InsightDashboardLocalizationService;
+using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
 using Microsoft.EntityFrameworkCore;
 using Microting.eForm.Infrastructure;
 using Microting.eForm.Infrastructure.Data.Entities;

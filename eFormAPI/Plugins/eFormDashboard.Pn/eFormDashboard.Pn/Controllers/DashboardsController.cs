@@ -50,14 +50,14 @@ namespace eFormDashboard.Pn.Controllers
         }
 
         [HttpPost]
-        [Route("api/insight-dashboard-pn/dashboards")]
+        [Route("api/eform-dashboard-pn/dashboards")]
         public async Task<OperationDataResult<DashboardsListModel>> GetAll([FromBody] DashboardsRequestModel requestModel)
         {
             return await _dashboardService.GetAll(requestModel);
         }
 
         [HttpGet]
-        [Route("api/insight-dashboard-pn/dashboards/view/{id}")]
+        [Route("api/eform-dashboard-pn/dashboards/view/{id}")]
         public async Task<OperationDataResult<DashboardViewModel>> GetSingleForView(int id)
         {
             return await _dashboardService.GetSingleForView(
@@ -66,42 +66,42 @@ namespace eFormDashboard.Pn.Controllers
         }
 
         [HttpGet]
-        [Route("api/insight-dashboard-pn/dashboards/edit/{id}")]
+        [Route("api/eform-dashboard-pn/dashboards/edit/{id}")]
         public async Task<OperationDataResult<DashboardEditModel>> GetSingleForEdit(int id)
         {
             return await _dashboardService.GetSingleForEdit(id);
         }
 
         [HttpPost]
-        [Route("api/insight-dashboard-pn/dashboards/create")]
+        [Route("api/eform-dashboard-pn/dashboards/create")]
         public async Task<OperationDataResult<int>> Create([FromBody] DashboardCreateModel requestModel)
         {
             return await _dashboardService.Create(requestModel);
         }
 
         [HttpPost]
-        [Route("api/insight-dashboard-pn/dashboards/copy/{id}")]
+        [Route("api/eform-dashboard-pn/dashboards/copy/{id}")]
         public async Task<OperationResult> Copy(int id)
         {
             return await _dashboardService.Copy(id);
         }
 
         [HttpPost]
-        [Route("api/insight-dashboard-pn/dashboards/update")]
+        [Route("api/eform-dashboard-pn/dashboards/update")]
         public async Task<OperationResult> Update([FromBody] DashboardEditModel editModel)
         {
             return await _dashboardService.Update(editModel);
         }
 
         [HttpPost]
-        [Route("api/insight-dashboard-pn/dashboards/delete/{id}")]
+        [Route("api/eform-dashboard-pn/dashboards/delete/{id}")]
         public async Task<OperationResult> Remove(int id)
         {
             return await _dashboardService.Remove(id);
         }
 
         [HttpPost]
-        [Route("api/insight-dashboard-pn/dashboards/export-doc/{id}")]
+        [Route("api/eform-dashboard-pn/dashboards/export-doc/{id}")]
         public async Task ExportDoc(int id, [FromForm]List<IFormFile> files)
         {
             

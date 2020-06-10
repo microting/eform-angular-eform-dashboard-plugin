@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {eformDashboardPnDashboardsService} from '../../../../services';
+import {eFormDashboardPnDashboardsService} from '../../../../services';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
 import {Subscription} from 'rxjs';
@@ -21,7 +21,7 @@ export class DashboardViewComponent implements OnInit, OnDestroy {
   exportToDocSub$: Subscription;
   dashboardViewModel: DashboardViewModel = new DashboardViewModel();
 
-  constructor(private dashboardsService: eformDashboardPnDashboardsService, private router: Router, private route: ActivatedRoute) {
+  constructor(private dashboardsService: eFormDashboardPnDashboardsService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {

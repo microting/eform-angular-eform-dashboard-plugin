@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
 import {Subscription} from 'rxjs';
-import {eformDashboardPnDashboardDictionariesService, eformDashboardPnDashboardsService} from '../../../../services';
+import {eformDashboardPnDashboardDictionariesService, eFormDashboardPnDashboardsService} from '../../../../services';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DashboardEditModel, DashboardItemModel, DashboardItemQuestionModel} from '../../../../models';
 import {DragulaService} from 'ng2-dragula';
@@ -29,7 +29,7 @@ export class DashboardEditComponent implements OnInit, OnDestroy {
   selectedDashboardId: number;
   dragulaGroupName = 'ITEMS';
 
-  constructor(private dashboardsService: eformDashboardPnDashboardsService,
+  constructor(private dashboardsService: eFormDashboardPnDashboardsService,
               private router: Router,
               private route: ActivatedRoute,
               private dictionaryService: eformDashboardPnDashboardDictionariesService,

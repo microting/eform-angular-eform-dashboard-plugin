@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {DashboardModel} from '../../../../models';
-import {eformDashboardPnDashboardsService} from '../../../../services';
+import {eFormDashboardPnDashboardsService} from '../../../../services';
 
 @Component({
   selector: 'app-dashboard-delete',
@@ -12,7 +12,7 @@ export class DashboardDeleteComponent implements OnInit {
   @Output() dashboardDeleted: EventEmitter<void> = new EventEmitter<void>();
   dashboard: DashboardModel = new DashboardModel();
 
-  constructor(private dashboardService: eformDashboardPnDashboardsService) { }
+  constructor(private dashboardService: eFormDashboardPnDashboardsService) { }
 
   show(model: DashboardModel) {
     this.dashboard = model;

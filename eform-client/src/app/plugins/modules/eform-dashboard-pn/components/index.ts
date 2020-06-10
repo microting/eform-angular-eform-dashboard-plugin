@@ -1,4 +1,4 @@
-export * from './eform-dashboard-settings/eform-dashboard-settings.component';
+export * from './eform-dashboard-settings/e-form-dashboard-settings.component';
 export * from './dashboards/dashboard-new/dashboard-new.component';
 export * from './dashboards/dashboards-page/dashboards-page.component';
 
@@ -17,10 +17,4 @@ export * from './dashboards/view/dashboard-chart-view/dashboard-chart-view.compo
 export * from './dashboards/view/dashboard-interviews-view/dashboard-interviews-view.component';
 export * from './dashboards/view/dashboard-chart-data-view/dashboard-chart-data-view.component';
 
-
-export * from './surveys/survey-configuration-edit/survey-configuration-edit.component';
-export * from './surveys/survey-configuration-new/survey-configuration-new.component';
-export * from './surveys/survey-configurations-page/survey-configurations-page.component';
-export * from './surveys/survey-configuration-activate/survey-configuration-status.component';
-export * from './surveys/survey-configuration-delete/survey-configuration-delete.component';
 

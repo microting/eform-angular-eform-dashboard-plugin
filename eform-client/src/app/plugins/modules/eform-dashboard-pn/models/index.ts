@@ -1,5 +1,4 @@
 export * from './eform-dashboard-base-settings.model';
-export * from './survey/survey-configs-list.model';
 export * from './dashboard/dashboard.model';
 export * from './dashboard/dashboards-list.model';
 export * from './dashboard/dashboard-create.model';
@@ -8,9 +7,6 @@ export * from './dashboard/dashboard-edit.model';
 export * from './dashboard/dashboard-item/dashboard-item.model';
 export * from './dashboard/dashboard-item/dashboard-item-answer-request.model';
 export * from './dashboard/dashboard-item/dashboard-item-question.model';
-export * from './survey/survey-config-update.model';
-export * from './survey/survey-config-create.model';
-export * from './survey/survey-config-update-status.model';
 export * from './dashboard/dashboard-item/dashboard-item-ignored-answer.model';
 export * from './dashboard/dashboard-item/dashboard-item-ignored-answer-view.model';
 export * from './dashboard/dashboard-item/dashboard-item-compare.model';

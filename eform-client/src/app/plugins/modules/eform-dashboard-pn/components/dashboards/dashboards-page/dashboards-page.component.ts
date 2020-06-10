@@ -8,8 +8,7 @@ import {DashboardSortColumns, insightDashboardPnSettings} from '../../../const';
 import {DashboardCopyComponent, DashboardDeleteComponent, DashboardEditComponent, DashboardNewComponent} from '../..';
 import {
   eformDashboardPnDashboardDictionariesService,
-  eformDashboardPnDashboardsService,
-  eformDashboardPnSurveyConfigsService
+  eFormDashboardPnDashboardsService
 } from '../../../services';
 import {CommonDictionaryModel} from '../../../../../../common/models/common';
 import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
@@ -44,8 +43,7 @@ export class DashboardsPageComponent implements OnInit, OnDestroy {
   }
 
   constructor(private sharedPnService: SharedPnService,
-              private dashboardService: eformDashboardPnDashboardsService,
-              private surveyConfigsService: eformDashboardPnSurveyConfigsService,
+              private dashboardService: eFormDashboardPnDashboardsService,
               private dictionariesService: eformDashboardPnDashboardDictionariesService,
               private sitesService: SitesService,
               private router: Router,

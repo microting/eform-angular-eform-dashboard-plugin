@@ -160,7 +160,7 @@ namespace eFormDashboard.Pn.Services.InterviewsExcelService
 
                 var assembly = typeof(EformDashboardPlugin).GetTypeInfo().Assembly;
                 var resourceStream = assembly.GetManifestResourceStream(
-                    $"InsightDashboard.Pn.Resources.Templates.{templateId}.xlsx");
+                    $"eFormDashboard.Pn.Resources.Templates.{templateId}.xlsx");
 
                 destFile = GetFilePathForUser(userId, templateId);
                 if (File.Exists(destFile))
