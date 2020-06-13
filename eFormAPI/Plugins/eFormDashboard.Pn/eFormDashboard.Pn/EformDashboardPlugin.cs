@@ -31,6 +31,7 @@ using eFormDashboard.Pn.Infrastructure.Data.Seed.Data;
 using eFormDashboard.Pn.Services.Common.eFormDashboardLocalizationService;
 using eFormDashboard.Pn.Services.DashboardService;
 using eFormDashboard.Pn.Services.DictionaryService;
+using eFormDashboard.Pn.Services.WordService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -67,6 +68,7 @@ namespace eFormDashboard.Pn
             services.AddSingleton<IeFormDashboardLocalizationService, EFormDashboardLocalizationService>();
             services.AddScoped<IDashboardService, DashboardService>();
             services.AddScoped<IDictionaryService, DictionaryService>();
+            services.AddTransient<IWordService, WordService>();
         }
 
         public void ConfigureOptionsServices(IServiceCollection services, IConfiguration configuration)
