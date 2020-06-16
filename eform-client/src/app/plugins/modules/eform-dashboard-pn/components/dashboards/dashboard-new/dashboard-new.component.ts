@@ -34,7 +34,7 @@ export class DashboardNewComponent implements OnInit, OnDestroy {
   createDashboard() {
     this.createDashboard$ = this.dashboardsService.create({
       name: this.dashboardName,
-      surveyId: this.selectedSurveyId,
+      eFormId: this.selectedSurveyId,
     }).subscribe((data) => {
       if (data && data.success) {
         this.frame.hide();

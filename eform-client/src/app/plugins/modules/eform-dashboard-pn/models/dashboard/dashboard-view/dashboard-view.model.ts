@@ -5,7 +5,7 @@ export class DashboardViewModel {
   id: number;
   dashboardName: string;
   surveyName: string;
-  surveyId: number;
+  eFormId: number;
   answerDates: DashboardAnswerDatesModel;
   locationName: string;
   locationId: number | null;

@@ -16,13 +16,14 @@ const DictionariesMethods = {
 };
 
 @Injectable()
+// tslint:disable-next-line:class-name
 export class eformDashboardPnDashboardDictionariesService extends BaseService {
   constructor(private _http: HttpClient, router: Router, toastrService: ToastrService) {
     super(_http, router, toastrService);
   }
 
-  getQuestions(surveyId: number): Observable<OperationDataResult<Array<DashboardItemQuestionModel>>> {
-    return this.get(DictionariesMethods.GetQuestions + '/' + surveyId);
+  getQuestions(eFormId: number): Observable<OperationDataResult<Array<DashboardItemQuestionModel>>> {
+    return this.get(DictionariesMethods.GetQuestions + '/' + eFormId);
   }
 
   getFilterAnswers(model: DashboardItemAnswerRequestModel): Observable<OperationDataResult<Array<CommonDictionaryModel>>> {

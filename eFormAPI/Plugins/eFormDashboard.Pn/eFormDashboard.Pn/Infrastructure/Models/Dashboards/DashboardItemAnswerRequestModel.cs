@@ -26,6 +26,6 @@ namespace eFormDashboard.Pn.Infrastructure.Models.Dashboards
 {
     public class DashboardItemAnswerRequestModel
     {
-        public int? FilterFieldOptionId { get; set; }
+        public int? FilterFieldId { get; set; }
     }
 }

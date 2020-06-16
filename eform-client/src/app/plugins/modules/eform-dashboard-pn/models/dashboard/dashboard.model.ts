@@ -4,7 +4,7 @@ export class DashboardModel {
   id: number;
   dashboardName: string;
   locationName: string;
-  surveyId: number;
+  eFormId: number;
   surveyName: string;
   locationsName: string;
   locationId: number;

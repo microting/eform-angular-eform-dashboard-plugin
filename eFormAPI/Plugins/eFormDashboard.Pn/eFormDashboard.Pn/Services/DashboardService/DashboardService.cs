@@ -130,10 +130,10 @@ namespace eFormDashboard.Pn.Services.DashboardService
                 {
                     using (var sdkContext = core.dbContextHelper.GetDbContext())
                     {
-                        dashboardModel.SurveyName = await sdkContext.question_sets
+                        dashboardModel.SurveyName = await sdkContext.check_lists
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .Where(x => x.Id == dashboardModel.eFormId)
-                            .Select(x => x.Name)
+                            .Select(x => x.Label)
                             .FirstOrDefaultAsync();
 
                         if (dashboardModel.LocationId != null)
@@ -177,7 +177,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
                 {
 
                     if (!await sdkContext
-                        .question_sets
+                        .check_lists
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .AnyAsync(x=>x.Id == createModel.eFormId))
                     {
@@ -524,28 +524,29 @@ namespace eFormDashboard.Pn.Services.DashboardService
                                 }
 
                                 // Check ignore values
-                                int answersCount;
-                                using (var sdkContext = core.dbContextHelper.GetDbContext())
-                                {
-                                    answersCount = await sdkContext.options
-                                        .AsNoTracking()
-                                        .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
-                                        .Where(x => x.QuestionId == dashboardItemModel.FieldId)
-                                        .Select(x => x.Id)
-                                        .CountAsync();
-                                }
-
-                                var modelAnswersCount = dashboardItemModel.IgnoredFieldValues
-                                    .Select(x => x.FieldOptionId)
-                                    .Count();
-
-                                if (answersCount == modelAnswersCount)
-                                {
-                                    transactions.Rollback();
-                                    return new OperationResult(
-                                        false,
-                                        _localizationService.GetString("SelectAtLeastOneValueThatShouldNotBeIgnored"));
-                                }
+                                // TODO Fix this for eFomrs
+                                // int answersCount;
+                                // using (var sdkContext = core.dbContextHelper.GetDbContext())
+                                // {
+                                //     answersCount = await sdkContext.options
+                                //         .AsNoTracking()
+                                //         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
+                                //         .Where(x => x.QuestionId == dashboardItemModel.FieldId)
+                                //         .Select(x => x.Id)
+                                //         .CountAsync();
+                                // }
+                                //
+                                // var modelAnswersCount = dashboardItemModel.IgnoredFieldValues
+                                //     .Select(x => x.FieldOptionId)
+                                //     .Count();
+                                //
+                                // if (answersCount == modelAnswersCount)
+                                // {
+                                //     transactions.Rollback();
+                                //     return new OperationResult(
+                                //         false,
+                                //         _localizationService.GetString("SelectAtLeastOneValueThatShouldNotBeIgnored"));
+                                // }
 
                                 // Ignore
                                 var ignoreItemsIds = dashboardItemModel.IgnoredFieldValues
@@ -586,28 +587,29 @@ namespace eFormDashboard.Pn.Services.DashboardService
                         // Create
                         foreach (var dashboardItemModel in forCreate)
                         {
-                            int answersCount;
-                            using (var sdkContext = core.dbContextHelper.GetDbContext())
-                            {
-                                answersCount = await sdkContext.options
-                                    .AsNoTracking()
-                                    .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
-                                    .Where(x => x.QuestionId == dashboardItemModel.FieldId)
-                                    .Select(x => x.Id)
-                                    .CountAsync();
-                            }
-
-                            var modelAnswersCount = dashboardItemModel.IgnoredFieldValues
-                                .Select(x => x.FieldOptionId)
-                                .Count();
-
-                            if (answersCount == modelAnswersCount)
-                            {
-                                transactions.Rollback();
-                                return new OperationResult(
-                                    false,
-                                    _localizationService.GetString("SelectAtLeastOneValueThatShouldNotBeIgnored"));
-                            }
+                            // int answersCount;
+                            // TODO Fix this for eForm
+                            // using (var sdkContext = core.dbContextHelper.GetDbContext())
+                            // {
+                            //     answersCount = await sdkContext.options
+                            //         .AsNoTracking()
+                            //         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
+                            //         .Where(x => x.QuestionId == dashboardItemModel.FieldId)
+                            //         .Select(x => x.Id)
+                            //         .CountAsync();
+                            // }
+                            //
+                            // var modelAnswersCount = dashboardItemModel.IgnoredFieldValues
+                            //     .Select(x => x.FieldOptionId)
+                            //     .Count();
+                            //
+                            // if (answersCount == modelAnswersCount)
+                            // {
+                            //     transactions.Rollback();
+                            //     return new OperationResult(
+                            //         false,
+                            //         _localizationService.GetString("SelectAtLeastOneValueThatShouldNotBeIgnored"));
+                            // }
 
                             var dashboardItem = new DashboardItem
                             {
@@ -799,11 +801,11 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                 using (var sdkContext = core.dbContextHelper.GetDbContext())
                 {
-                    result.SurveyName = await sdkContext.question_sets
+                    result.SurveyName = await sdkContext.check_lists
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Where(x => x.Id == dashboard.eFormId)
-                        .Select(x => x.Name)
+                        .Select(x => x.Label)
                         .FirstOrDefaultAsync();
 
                     if (dashboard.LocationId != null)
@@ -844,16 +846,17 @@ namespace eFormDashboard.Pn.Services.DashboardService
                             Name = x.Name,
                         }).ToListAsync();
 
-                    options = await sdkContext.options
-                        .AsNoTracking()
-                        .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
-                        .Select(x => new CommonDictionaryModel
-                        {
-                            Id = x.Id,
-                            Name = x.OptionTranslationses
-                                .Select(y=>y.Name)
-                                .FirstOrDefault(),
-                        }).ToListAsync();
+                    // TODO Fix this for eForms
+                    // options = await sdkContext.options
+                    //     .AsNoTracking()
+                    //     .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
+                    //     .Select(x => new CommonDictionaryModel
+                    //     {
+                    //         Id = x.Id,
+                    //         Name = x.OptionTranslationses
+                    //             .Select(y=>y.Name)
+                    //             .FirstOrDefault(),
+                    //     }).ToListAsync();
                 }
 
                 var items = dashboard.DashboardItems
@@ -926,19 +929,20 @@ namespace eFormDashboard.Pn.Services.DashboardService
                         .IgnoredFieldValues
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed))
                     {
-                        foreach (var option in options)
-                        {
-                            if (option.Id == dashboardItemIgnoredAnswer.FieldOptionId)
-                            {
-                                var ignoredAnswer = new DashboardItemIgnoredAnswerModel
-                                {
-                                    Id = dashboardItemIgnoredAnswer.Id,
-                                    FieldOptionId = dashboardItemIgnoredAnswer.FieldOptionId,
-                                    Name = ChartHelpers.GetSmileyLabel(option.Name),
-                                };
-                                dashboardItemModel.IgnoredFieldValues.Add(ignoredAnswer);
-                            }
-                        }
+                        // TODO Fix this for eForms
+                        // foreach (var option in options)
+                        // {
+                        //     if (option.Id == dashboardItemIgnoredAnswer.FieldOptionId)
+                        //     {
+                        //         var ignoredAnswer = new DashboardItemIgnoredAnswerModel
+                        //         {
+                        //             Id = dashboardItemIgnoredAnswer.Id,
+                        //             FieldOptionId = dashboardItemIgnoredAnswer.FieldOptionId,
+                        //             Name = ChartHelpers.GetSmileyLabel(option.Name),
+                        //         };
+                        //         dashboardItemModel.IgnoredFieldValues.Add(ignoredAnswer);
+                        //     }
+                        // }
                     }
 
                     using (var sdkContext = core.dbContextHelper.GetDbContext())

@@ -74,13 +74,13 @@ export class DashboardEditComponent implements OnInit, OnDestroy {
         if (data && data.success) {
           this.dashboardEditModel = {...data.model};
         }
-        this.getFilterQuestions(data.model.surveyId);
-        this.getLocationTags(data.model.surveyId);
+        this.getFilterQuestions(data.model.eFormId);
+        this.getLocationTags(data.model.eFormId);
       });
   }
 
-  getFilterQuestions(surveyId: number) {
-    this.filterQuestionsSub$ = this.dictionaryService.getQuestions(surveyId)
+  getFilterQuestions(eFormId: number) {
+    this.filterQuestionsSub$ = this.dictionaryService.getQuestions(eFormId)
       .subscribe((data) => {
         if (data && data.success) {
           this.questions = data.model;

@@ -35,9 +35,9 @@ namespace eFormDashboard.Pn.Services.DictionaryService
     {
         Task<OperationDataResult<List<CommonDictionaryModel>>> GetSurveys();
         Task<OperationDataResult<List<CommonDictionaryModel>>> GetTags();
-        // Task<OperationDataResult<List<QuestionDictionaryModel>>> GetQuestions(int surveyId);
+        Task<OperationDataResult<List<QuestionDictionaryModel>>> GetQuestions(int eFormId);
         Task<OperationDataResult<List<CommonDictionaryModel>>> GetFilterAnswers(
             DashboardItemAnswerRequestModel requestModel);
-        Task<OperationDataResult<List<CommonDictionaryModel>>> GetLocationsByeFormId(int surveyId);
+        Task<OperationDataResult<List<CommonDictionaryModel>>> GetLocationsByeFormId(int eFormId);
     }
 }

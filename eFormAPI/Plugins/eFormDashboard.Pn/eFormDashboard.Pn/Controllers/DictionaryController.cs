@@ -65,12 +65,12 @@ namespace eFormDashboard.Pn.Controllers
             return await _dictionaryService.GetLocationsByeFormId(id);
         }
 
-        // [HttpGet]
-        // [Route("api/eform-dashboard-pn/dictionary/questions/{surveyId}")]
-        // public async Task<OperationDataResult<List<QuestionDictionaryModel>>> GetQuestions(int surveyId)
-        // {
-        //     return await _dictionaryService.GetQuestions(surveyId);
-        // }
+        [HttpGet]
+        [Route("api/eform-dashboard-pn/dictionary/questions/{surveyId}")]
+        public async Task<OperationDataResult<List<QuestionDictionaryModel>>> GetQuestions(int surveyId)
+        {
+            return await _dictionaryService.GetQuestions(surveyId);
+        }
 
         [HttpGet]
         [Route("api/eform-dashboard-pn/dictionary/filter-answers")]

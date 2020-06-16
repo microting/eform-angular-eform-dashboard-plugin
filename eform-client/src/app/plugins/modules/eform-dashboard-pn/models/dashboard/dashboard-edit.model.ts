@@ -5,7 +5,7 @@ export class DashboardEditModel {
   id: number;
   dashboardName: string;
   answerDates: DashboardAnswerDatesModel = new DashboardAnswerDatesModel;
-  surveyId: number;
+  eFormId: number;
   surveyName: string;
   locationName: string;
   locationId: number;
