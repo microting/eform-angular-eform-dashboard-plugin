@@ -1,7 +1,6 @@
 # eform-angular-eform-dashboard-plugin
-Build status
-[![Build Status](https://travis-ci.com/microting/eform-angular-eform-dashboard-plugin.svg?branch=stable)](https://travis-ci.com/microting/eform-angular-eform-dashboard-plugin)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/7388041b7da0c5184dbc/maintainability)](https://codeclimate.com/github/microting/eform-angular-eform-dashboard-plugin/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b7fcdfeafb4f4c768146543cf1fbf1f8)](https://www.codacy.com/gh/microting/eform-angular-eform-dashboard-plugin/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=microting/eform-angular-eform-dashboard-plugin&amp;utm_campaign=Badge_Grade)
 ## NOTICE! this is not a standalone project and needs to be used with eForm Angular Frontend.
 
 ## Contributing
@@ -38,7 +37,7 @@ This project has adopted the [Microting Open Source Code of Conduct](https://www
 
 The MIT License (MIT)
 
-Copyright (c) 2007-2020 Microting A/S
+Copyright (c) 2007-2021 Microting A/S
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
