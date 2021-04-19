@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.0.21](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.21) (2021-04-19)
+
+[Full Changelog](https://github.com/microting/eform-angular-eform-dashboard-plugin/compare/v1.0.20...v1.0.21)
+
 ## [v1.0.20](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.20) (2021-04-15)
 
 [Full Changelog](https://github.com/microting/eform-angular-eform-dashboard-plugin/compare/v1.0.19...v1.0.20)
