@@ -1,5 +1,18 @@
 # Changelog
 
+## [v1.0.33](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.33) (2021-05-26)
+
+[Full Changelog](https://github.com/microting/eform-angular-eform-dashboard-plugin/compare/v1.0.32...v1.0.33)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 3.0.12 to 3.0.13 [\#219](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/219)
+- Bump Microting.eForm from 5.2.2 to 5.2.3 [\#218](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/218)
+
+**Merged pull requests:**
+
+- Bump Microsoft.NET.Test.Sdk from 16.9.1 to 16.9.4 in /eFormAPI/Plugins/eFormDashboard.Pn [\#109](https://github.com/microting/eform-angular-eform-dashboard-plugin/pull/109) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
 ## [v1.0.32](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.32) (2021-05-19)
 
 [Full Changelog](https://github.com/microting/eform-angular-eform-dashboard-plugin/compare/v1.0.31...v1.0.32)
@@ -107,7 +120,6 @@
 - Bump Microting.eFormDashboardBase from 2.0.63 to 2.0.66 [\#166](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/166)
 - Bump Microting.eFormApi.BasePn from 2.0.126 to 2.0.129 [\#165](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/165)
 - Bump Microting.eForm from 4.4.35 to 4.4.38 [\#164](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/164)
-- Bump Microting.eForm from 4.4.29 to 4.4.31 [\#146](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/146)
 
 ## [v1.0.21](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.21) (2021-04-19)
 
@@ -137,6 +149,7 @@
 
 - Bump Microting.eFormDashboardBase from 2.0.61 to 2.0.62 [\#148](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/148)
 - Bump Microting.eFormApi.BasePn from 2.0.120 to 2.0.122 [\#147](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/147)
+- Bump Microting.eForm from 4.4.29 to 4.4.31 [\#146](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/146)
 
 ## [v1.0.18](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.18) (2021-04-13)
 
@@ -244,7 +257,6 @@
 
 - Bump Microting.eFormDashboardBase from 2.0.50 to 2.0.51 [\#107](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/107)
 - Bump Microting.eFormApi.BasePn from 2.0.106 to 2.0.107 [\#106](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/106)
-- Bump Microting.eForm from 4.4.11 to 4.4.13 [\#105](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/105)
 
 ## [v1.0.7](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.7) (2021-03-25)
 
@@ -262,9 +274,10 @@
 
 **Implemented enhancements:**
 
+- Bump Microting.eForm from 4.4.11 to 4.4.13 [\#105](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/105)
 - Bump Microting.eFormDashboardBase from 2.0.48 to 2.0.49 [\#99](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/99)
 - Bump Microting.eFormApi.BasePn from 2.0.103 to 2.0.104 [\#98](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/98)
-- Bump Microting.eForm from 4.4.8 to 4.4.9 [\#97](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/97)
+- Bump Microting.eFormApi.BasePn from 2.0.99 to 2.0.103 [\#92](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/92)
 
 ## [v1.0.5](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.5) (2021-03-16)
 
@@ -272,8 +285,8 @@
 
 **Implemented enhancements:**
 
+- Bump Microting.eForm from 4.4.8 to 4.4.9 [\#97](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/97)
 - Bump Microting.eFormDashboardBase from 2.0.46 to 2.0.48 [\#93](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/93)
-- Bump Microting.eFormApi.BasePn from 2.0.99 to 2.0.103 [\#92](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/92)
 - Bump Microting.eForm from 4.4.3 to 4.4.8 [\#91](https://github.com/microting/eform-angular-eform-dashboard-plugin/issues/91)
 
 ## [v1.0.4](https://github.com/microting/eform-angular-eform-dashboard-plugin/tree/v1.0.4) (2021-03-05)
