@@ -3,6 +3,9 @@ name: .NET Pull reqeusts
 on:
   pull_request:
     branches: [ master, stable ]
+    paths-ignore:
+    - '**.md'
+    - '.github/**'
 
 jobs:
   build:
