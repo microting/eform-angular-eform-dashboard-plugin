@@ -37,9 +37,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microting.eFormApi.BasePn;
+using Microting.eFormApi.BasePn.Infrastructure.Consts;
 using Microting.eFormApi.BasePn.Infrastructure.Database.Extensions;
 using Microting.eFormApi.BasePn.Infrastructure.Helpers;
 using Microting.eFormApi.BasePn.Infrastructure.Models.Application;
+using Microting.eFormApi.BasePn.Infrastructure.Models.Application.NavigationMenu;
 using Microting.eFormApi.BasePn.Infrastructure.Settings;
 using Microting.eFormDashboardBase.Infrastructure.Data;
 using Microting.eFormDashboardBase.Infrastructure.Data.Factories;
@@ -93,6 +95,104 @@ namespace eFormDashboard.Pn
 
             // Seed database
             SeedDatabase(connectionString);
+        }
+
+        public List<PluginMenuItemModel> GetNavigationMenu(IServiceProvider serviceProvider)
+        {
+            var pluginMenu = new List<PluginMenuItemModel>
+            {
+                new PluginMenuItemModel
+                {
+                    Name = "Dropdown",
+                    E2EId = "eform-dashboard-pn",
+                    Link = "",
+                    Type = MenuItemTypeEnum.Dropdown,
+                    Position = 0,
+                    Translations = new List<PluginMenuTranslationModel>
+                    {
+                        new PluginMenuTranslationModel
+                        {
+                            LocaleName = LocaleNames.English,
+                            Name = "eForm Dashboard",
+                            Language = LanguageNames.English,
+                        },
+                        new PluginMenuTranslationModel
+                        {
+                            LocaleName = LocaleNames.German,
+                            Name = "eForm Dashboard",
+                            Language = LanguageNames.German,
+                        },
+                        new PluginMenuTranslationModel
+                        {
+                            LocaleName = LocaleNames.Danish,
+                            Name = "eForm Dashboard",
+                            Language = LanguageNames.Danish,
+                        },
+                    },
+                    ChildItems = new List<PluginMenuItemModel>
+                    {
+                        new PluginMenuItemModel
+                        {
+                            Name = "Dashboards",
+                            E2EId = "eform-dashboard-pn-dashboards",
+                            Link = "/plugins/eform-dashboard-pn/dashboards",
+                            Type = MenuItemTypeEnum.Link,
+                            Position = 1,
+                            MenuTemplate = new PluginMenuTemplateModel
+                            {
+                                Name = "Dashboards",
+                                E2EId = "eform-dashboard-pn-dashboards",
+                                DefaultLink = "/plugins/eform-dashboard-pn/dashboards",
+                                Permissions = new List<PluginMenuTemplatePermissionModel>(),
+                                Translations = new List<PluginMenuTranslationModel>
+                                {
+                                    new PluginMenuTranslationModel
+                                    {
+                                        LocaleName = LocaleNames.English,
+                                        Name = "Dashboards",
+                                        Language = LanguageNames.English,
+                                    },
+                                    new PluginMenuTranslationModel
+                                    {
+                                        LocaleName = LocaleNames.German,
+                                        Name = "Dashboards",
+                                        Language = LanguageNames.German,
+                                    },
+                                    new PluginMenuTranslationModel
+                                    {
+                                        LocaleName = LocaleNames.Danish,
+                                        Name = "Dashboards",
+                                        Language = LanguageNames.Danish,
+                                    },
+                                }
+                            },
+                            Translations = new List<PluginMenuTranslationModel>
+                            {
+                                new PluginMenuTranslationModel
+                                {
+                                    LocaleName = LocaleNames.English,
+                                    Name = "Dashboards",
+                                    Language = LanguageNames.English,
+                                },
+                                new PluginMenuTranslationModel
+                                {
+                                    LocaleName = LocaleNames.German,
+                                    Name = "Dashboards",
+                                    Language = LanguageNames.German,
+                                },
+                                new PluginMenuTranslationModel
+                                {
+                                    LocaleName = LocaleNames.Danish,
+                                    Name = "Dashboards",
+                                    Language = LanguageNames.Danish,
+                                },
+                            }
+                        }
+                    }
+                }
+            };
+
+            return pluginMenu;
         }
 
         public MenuModel HeaderMenu(IServiceProvider serviceProvider)

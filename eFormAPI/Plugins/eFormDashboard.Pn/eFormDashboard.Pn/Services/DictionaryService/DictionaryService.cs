@@ -63,9 +63,9 @@ SOFTWARE.
             try
             {
                 var core = await _coreHelper.GetCore();
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
-                    var surveys = await sdkContext.check_lists
+                    var surveys = await sdkContext.CheckLists
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed && x.ParentId == null)
                         .Select(x => new CommonDictionaryModel()
@@ -90,9 +90,9 @@ SOFTWARE.
             try
             {
                 var core = await _coreHelper.GetCore();
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
-                    var surveys = await sdkContext.tags
+                    var surveys = await sdkContext.Tags
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Select(x => new CommonDictionaryModel()
@@ -118,9 +118,9 @@ SOFTWARE.
             try
             {
                 var core = await _coreHelper.GetCore();
-                using (var dbContext = core.dbContextHelper.GetDbContext())
+                using (var dbContext = core.DbContextHelper.GetDbContext())
                 {
-                    var sites = await dbContext.check_list_sites
+                    var sites = await dbContext.CheckListSites
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Where(x => x.Site.WorkflowState != Constants.WorkflowStates.Removed)
@@ -136,7 +136,7 @@ SOFTWARE.
                             Name = x.Key.Name,
                         }).ToListAsync();
                     
-                    var siteCases = await dbContext.cases
+                    var siteCases = await dbContext.Cases
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Where(x => x.Site.WorkflowState != Constants.WorkflowStates.Removed)
@@ -172,15 +172,15 @@ SOFTWARE.
                 var questionsResult = new List<QuestionDictionaryModel>();
                 var questions = await GetAllFields(eFormId);
                 var core = await _coreHelper.GetCore();
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
-                    foreach (fields field in questions)
+                    foreach (Field field in questions)
                     {
                         questionsResult.Add(new QuestionDictionaryModel()
                         {
                             Id = field.Id,
                             Name = field.Label,
-                            Type = sdkContext.field_types.Single(x => x.Id == field.FieldTypeId).FieldType
+                            Type = sdkContext.FieldTypes.Single(x => x.Id == field.FieldTypeId).Type
                         });
                     }
                 }
@@ -205,9 +205,9 @@ SOFTWARE.
             try
             {
                 var core = await _coreHelper.GetCore();
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
-                    var languages = await sdkContext.languages.ToListAsync();
+                    var languages = await sdkContext.Languages.ToListAsync();
                     var answersResult = new List<CommonDictionaryModel>();
                     // bool isSmileyQuestion = false;
                     foreach (var language in languages)
@@ -219,7 +219,7 @@ SOFTWARE.
 
                         // TODO take by language
                         List<CommonDictionaryModel> answers = new List<CommonDictionaryModel>();
-                        fields field = await sdkContext.fields.SingleOrDefaultAsync(x => x.Id == requestModel.FilterFieldId);
+                        Field field = await sdkContext.Fields.SingleOrDefaultAsync(x => x.Id == requestModel.FilterFieldId);
                         if (field.KeyValuePairList != null)
                         {
                             List<KeyValuePair> theList = PairRead(field.KeyValuePairList);
@@ -338,22 +338,22 @@ SOFTWARE.
             }
         }
 
-        private async Task<List<fields>> GetAllFields(int eFormId)
+        private async Task<List<Field>> GetAllFields(int eFormId)
         {
-            List<fields> theList = new List<fields>();
+            List<Field> theList = new List<Field>();
             var core = await _coreHelper.GetCore();
-            using (var sdkContext = core.dbContextHelper.GetDbContext())
+            using (var sdkContext = core.DbContextHelper.GetDbContext())
             {
-                if (sdkContext.check_lists.Any(x => x.ParentId == eFormId))
+                if (sdkContext.CheckLists.Any(x => x.ParentId == eFormId))
                 {
-                    foreach (check_lists checkList in sdkContext.check_lists.Where(x => x.ParentId == eFormId).ToList())
+                    foreach (CheckList checkList in sdkContext.CheckLists.Where(x => x.ParentId == eFormId).ToList())
                     {
                         theList.AddRange(await GetAllFields(checkList.Id));
                     }
                 }
                 else
                 {
-                    theList.AddRange(sdkContext.fields.Where(x => x.CheckListId == eFormId));
+                    theList.AddRange(sdkContext.Fields.Where(x => x.CheckListId == eFormId));
                 }
             }
 

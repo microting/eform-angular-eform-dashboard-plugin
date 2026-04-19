@@ -128,9 +128,9 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                 foreach (var dashboardModel in dashboards)
                 {
-                    using (var sdkContext = core.dbContextHelper.GetDbContext())
+                    using (var sdkContext = core.DbContextHelper.GetDbContext())
                     {
-                        dashboardModel.SurveyName = await sdkContext.check_lists
+                        dashboardModel.SurveyName = await sdkContext.CheckLists
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .Where(x => x.Id == dashboardModel.eFormId)
                             .Select(x => x.Label)
@@ -138,7 +138,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                         if (dashboardModel.LocationId != null)
                         {
-                            dashboardModel.LocationName = await sdkContext.sites
+                            dashboardModel.LocationName = await sdkContext.Sites
                                 .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                                 .Where(x => x.Id == dashboardModel.LocationId)
                                 .Select(x => x.Name)
@@ -147,7 +147,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                         if (dashboardModel.TagId != null)
                         {
-                            dashboardModel.TagName = await sdkContext.tags
+                            dashboardModel.TagName = await sdkContext.Tags
                                 .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                                 .Where(x => x.Id == dashboardModel.TagId)
                                 .Select(x => x.Name)
@@ -173,11 +173,11 @@ namespace eFormDashboard.Pn.Services.DashboardService
             try
             {
                 var core = await _coreHelper.GetCore();
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
 
                     if (!await sdkContext
-                        .check_lists
+                        .CheckLists
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .AnyAsync(x=>x.Id == createModel.eFormId))
                     {
@@ -371,12 +371,12 @@ namespace eFormDashboard.Pn.Services.DashboardService
                 }
 
                 var core = await _coreHelper.GetCore();
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
                     if (editModel.LocationId != null)
                     {
                         if (!await sdkContext
-                            .sites
+                            .Sites
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .AnyAsync(x => x.Id == editModel.LocationId))
                         {
@@ -389,7 +389,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
                     if (editModel.TagId != null)
                     {
                         if (!await sdkContext
-                            .tags
+                            .Tags
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .AnyAsync(x => x.Id == editModel.TagId))
                         {
@@ -526,7 +526,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
                                 // Check ignore values
                                 // TODO Fix this for eFomrs
                                 // int answersCount;
-                                // using (var sdkContext = core.dbContextHelper.GetDbContext())
+                                // using (var sdkContext = core.DbContextHelper.GetDbContext())
                                 // {
                                 //     answersCount = await sdkContext.options
                                 //         .AsNoTracking()
@@ -589,7 +589,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
                         {
                             // int answersCount;
                             // TODO Fix this for eForm
-                            // using (var sdkContext = core.dbContextHelper.GetDbContext())
+                            // using (var sdkContext = core.DbContextHelper.GetDbContext())
                             // {
                             //     answersCount = await sdkContext.options
                             //         .AsNoTracking()
@@ -799,9 +799,9 @@ namespace eFormDashboard.Pn.Services.DashboardService
                 List<CommonDictionaryModel> tags;
                 List<CommonDictionaryModel> options;
 
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
-                    result.SurveyName = await sdkContext.check_lists
+                    result.SurveyName = await sdkContext.CheckLists
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Where(x => x.Id == dashboard.eFormId)
@@ -810,7 +810,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                     if (dashboard.LocationId != null)
                     {
-                        result.LocationName = await sdkContext.sites
+                        result.LocationName = await sdkContext.Sites
                             .AsNoTracking()
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .Where(x => x.Id == dashboard.LocationId)
@@ -820,7 +820,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                     if (dashboard.TagId != null)
                     {
-                        result.TagName = await sdkContext.tags
+                        result.TagName = await sdkContext.Tags
                             .AsNoTracking()
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .Where(x => x.Id == dashboard.TagId)
@@ -828,7 +828,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
                             .FirstOrDefaultAsync();
                     }
 
-                    sites = await sdkContext.sites
+                    sites = await sdkContext.Sites
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Select(x => new CommonDictionaryModel
@@ -837,7 +837,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
                             Name = x.Name,
                         }).ToListAsync();
 
-                    tags = await sdkContext.tags
+                    tags = await sdkContext.Tags
                         .AsNoTracking()
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Select(x => new CommonDictionaryModel
@@ -945,9 +945,9 @@ namespace eFormDashboard.Pn.Services.DashboardService
                         // }
                     }
 
-                    using (var sdkContext = core.dbContextHelper.GetDbContext())
+                    using (var sdkContext = core.DbContextHelper.GetDbContext())
                     {
-                        var languages = await sdkContext.languages.ToListAsync();
+                        var languages = await sdkContext.Languages.ToListAsync();
                         foreach (var language in languages)
                         {
                             var firstQuestion = await sdkContext.QuestionTranslations
@@ -1001,7 +1001,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
                                 dashboardItemModel.FilterAnswerName = await sdkContext.OptionTranslations
                                     .AsNoTracking()
                                     .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
-                                    .Where(x => x.option.WorkflowState != Constants.WorkflowStates.Removed)
+                                    .Where(x => x.Option.WorkflowState != Constants.WorkflowStates.Removed)
                                     .Where(x => x.Language.WorkflowState != Constants.WorkflowStates.Removed)
                                     .Where(x => x.OptionId == dashboardItem.FilterFieldId)
                                     .Where(x => x.Language.Id == language.Id)
@@ -1112,9 +1112,9 @@ namespace eFormDashboard.Pn.Services.DashboardService
                         _localizationService.GetString("DashboardNotFound"));
                 }
 
-                using (var sdkContext = core.dbContextHelper.GetDbContext())
+                using (var sdkContext = core.DbContextHelper.GetDbContext())
                 {
-                    dashboard.SurveyName = await sdkContext.question_sets
+                    dashboard.SurveyName = await sdkContext.QuestionSets
                         .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                         .Where(x => x.Id == dashboard.eFormId)
                         .Select(x => x.Name)
@@ -1122,7 +1122,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                     if (dashboard.LocationId != null)
                     {
-                        dashboard.LocationName = await sdkContext.sites
+                        dashboard.LocationName = await sdkContext.Sites
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .Where(x => x.Id == dashboard.LocationId)
                             .Select(x => x.Name)
@@ -1131,7 +1131,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                     if (dashboard.TagId != null)
                     {
-                        dashboard.TagName = await sdkContext.tags
+                        dashboard.TagName = await sdkContext.Tags
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .Where(x => x.Id == dashboard.TagId)
                             .Select(x => x.Name)
@@ -1140,7 +1140,7 @@ namespace eFormDashboard.Pn.Services.DashboardService
 
                     foreach (var dashboardItemModel in dashboard.Items)
                     {
-                        var question = await sdkContext.questions
+                        var question = await sdkContext.Questions
                             .Where(x => x.WorkflowState != Constants.WorkflowStates.Removed)
                             .Where(x => x.Id == dashboardItemModel.FieldId)
                             .FirstOrDefaultAsync();

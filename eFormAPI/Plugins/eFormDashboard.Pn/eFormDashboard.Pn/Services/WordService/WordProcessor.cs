@@ -197,7 +197,6 @@ namespace eFormDashboard.Pn.Services.WordService
         public void Dispose()
         {
             _wordProcessingDocument.Save();
-            _wordProcessingDocument.Close();
             _wordProcessingDocument.Dispose();
         }
     }
