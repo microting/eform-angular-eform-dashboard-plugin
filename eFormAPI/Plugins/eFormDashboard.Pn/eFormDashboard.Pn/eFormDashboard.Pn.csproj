@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -13,14 +13,15 @@
     </PropertyGroup>
     <PropertyGroup>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <ServerGarbageCollection>false</ServerGarbageCollection>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microting.eForm" Version="5.5.65" />
-        <PackageReference Include="Microting.eFormApi.BasePn" Version="3.1.93" />
-        <PackageReference Include="Microting.eFormDashboardBase" Version="3.0.151" />
-        <PackageReference Include="EPPlus.Core" Version="1.5.4" />
-        <PackageReference Include="HtmlToOpenXml.dll" Version="2.2.0" />
+        <PackageReference Include="Microting.eForm" Version="10.0.17" />
+        <PackageReference Include="Microting.eFormApi.BasePn" Version="10.0.18" />
+        <PackageReference Include="Microting.eFormDashboardBase" Version="10.0.19" />
+        <PackageReference Include="EPPlus" Version="7.8.0" />
+        <PackageReference Include="HtmlToOpenXml.dll" Version="3.3.1" />
     </ItemGroup>
 
     <ItemGroup>

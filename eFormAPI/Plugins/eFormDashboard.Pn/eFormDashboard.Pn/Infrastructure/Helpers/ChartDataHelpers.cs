@@ -125,7 +125,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                 }
             }
 
-            var answerQueryable = sdkContext.answer_values
+            var answerQueryable = sdkContext.AnswerValues
                 .AsNoTracking()
                 .Where(x => x.WorkflowState != Microting.eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed)
                 .AsQueryable();
@@ -222,7 +222,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                     }
                 }
 
-                var ignoreOptions = new List<options>();
+                var ignoreOptions = new List<Option>();
 
                 if (dashboardItem.IgnoredFieldValues
                     .Any(x => x.WorkflowState != Microting.eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed))
@@ -235,7 +235,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                     answerQueryable = answerQueryable
                         .Where(x => !optionIds.Contains(x.OptionId));
 
-                    ignoreOptions = await sdkContext.options.Where(x => optionIds.Contains(x.Id)).ToListAsync();
+                    ignoreOptions = await sdkContext.Options.Where(x => optionIds.Contains(x.Id)).ToListAsync();
                 }
 
                 var data = new List<ChartDataItem>();
@@ -288,7 +288,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                                     .FirstOrDefault(),
                                 IsTag = true,
                                 Weight = x.Option.WeightValue,
-                                OptionIndex = x.Option.OptionsIndex,
+                                OptionIndex = x.Option.OptionIndex,
                                 AnswerId = x.AnswerId,
                             })
                             .ToListAsync();
@@ -333,7 +333,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                             LocationTagId = x.Answer.SiteId,
                             IsTag = false,
                             Weight = x.Option.WeightValue,
-                            OptionIndex = x.Option.OptionsIndex,
+                            OptionIndex = x.Option.OptionIndex,
                             AnswerId = x.AnswerId,
                         })
                         .ToListAsync();
@@ -365,7 +365,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                                 LocationTagId = x.Answer.SiteId,
                                 IsTag = false,
                                 Weight = x.Option.WeightValue,
-                                OptionIndex = x.Option.OptionsIndex,
+                                OptionIndex = x.Option.OptionIndex,
                                 AnswerId = x.AnswerId
                             })
                             .OrderBy(t => t.Finished)
@@ -399,7 +399,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                                     .FirstOrDefault(),
                                 IsTag = true,
                                 Weight = x.Option.WeightValue,
-                                OptionIndex = x.Option.OptionsIndex,
+                                OptionIndex = x.Option.OptionIndex,
                                 
                                 AnswerId = x.AnswerId,
                             })
@@ -409,7 +409,7 @@ namespace eFormDashboard.Pn.Infrastructure.Helpers
                 }
 
                 // Get question type
-                var questionTypeData = await sdkContext.questions
+                var questionTypeData = await sdkContext.Questions
                     .AsNoTracking()
                     .Where(x => x.WorkflowState != Microting.eForm.Infrastructure.Constants.Constants.WorkflowStates.Removed)
                     .Where(x => x.Id == dashboardItem.FieldId)
